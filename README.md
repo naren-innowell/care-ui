@@ -1,16 +1,198 @@
-# React + Vite
+# Care UI Component Library
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React component library built with Vite, Flow, and React-Fela for the Innowell platform.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Care UI is a comprehensive component library providing reusable React components organized by atomic design principles (atoms, molecules, organisms, and layouts). The library is built with modern tooling and supports both web components with plans for mobile components in the future.
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 🎨 **Atomic Design Structure**: Components organized as atoms, molecules, organisms, and layouts
+- ⚡ **Built with Vite**: Fast development and optimized builds
+- 🔷 **Flow Type Checking**: Type safety with Facebook Flow
+- 🎭 **React-Fela**: CSS-in-JS styling with Fela
+- 📚 **Storybook**: Interactive component documentation and development
+- 📦 **Dual Format Output**: ES modules and CommonJS support
+- 🚀 **GitHub Packages**: Published to npm via GitHub Packages
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install @innowellteam/care-ui
+# or
+yarn add @innowellteam/care-ui
+```
+
+### Peer Dependencies
+
+This library requires the following peer dependencies:
+
+- `react`: ^18.0.0 || ^19.0.0
+- `react-dom`: ^18.0.0 || ^19.0.0
+- `react-fela`: ~10.8.0
+
+Make sure to install these in your project:
+
+```bash
+yarn add react react-dom react-fela@~10.8.0
+```
+
+## Usage
+
+### Setup Fela Renderer
+
+Before using components, you need to set up a Fela renderer and provider:
+
+```javascript
+import { createRenderer } from 'fela';
+import { RendererProvider } from 'react-fela';
+import embedded from 'fela-plugin-embedded';
+import prefixer from 'fela-plugin-prefixer';
+import fallbackValue from 'fela-plugin-fallback-value';
+
+const renderer = createRenderer({
+  plugins: [
+    embedded(),
+    prefixer(),
+    fallbackValue(),
+  ],
+});
+
+function App() {
+  return (
+    <RendererProvider renderer={renderer}>
+      {/* Your app components */}
+    </RendererProvider>
+  );
+}
+```
+
+### Using Components
+
+```javascript
+import { Button, Box, Heading } from '@innowellteam/care-ui';
+
+function MyComponent() {
+  return (
+    <Box padding="md">
+      <Heading level={1}>Welcome</Heading>
+      <Button variant="primary" onClick={() => console.log('Clicked!')}>
+        Click Me
+      </Button>
+    </Box>
+  );
+}
+```
+
+## Development
+
+### Prerequisites
+
+- Node.js 20+
+- Yarn
+
+### Setup
+
+```bash
+# Install dependencies
+yarn install
+
+# Run Flow type checking
+yarn flow
+
+# Run ESLint
+yarn lint
+
+# Build the library
+yarn build
+```
+
+### Storybook
+
+Start the Storybook development server to view and develop components:
+
+```bash
+yarn storybook
+```
+
+This will start Storybook on `http://localhost:6006`
+
+Build a static Storybook site:
+
+```bash
+yarn build-storybook
+```
+
+## Project Structure
+
+```
+care-ui/
+├── src/
+│   ├── index.js                 # Library entry point
+│   └── web-components/          # Web components (future: mobile-components/)
+│       ├── atoms/               # Basic building blocks
+│       ├── molecules/           # Composite components
+│       ├── organisms/           # Complex components
+│       └── layouts/             # Layout components
+├── .storybook/                  # Storybook configuration
+├── dist/                         # Build output
+└── package.json
+```
+
+## Building
+
+The library is built using Vite in library mode, producing both ES modules and CommonJS formats:
+
+```bash
+yarn build
+```
+
+Output files:
+- `dist/care-ui.mjs` - ES module format
+- `dist/care-ui.cjs` - CommonJS format
+
+## Publishing
+
+The library is published to GitHub Packages. To publish:
+
+1. Create a GitHub release
+2. The CI/CD workflow will automatically build and publish the package
+
+### Manual Publishing
+
+```bash
+# Build the library
+yarn build
+
+# Publish to GitHub Packages
+npm publish
+```
+
+Make sure you have the `GITHUB_TOKEN` environment variable set or configured in `.npmrc`.
+
+## Tech Stack
+
+- **Build Tool**: Vite 7
+- **Framework**: React 19
+- **Type Checking**: Flow
+- **Styling**: React-Fela with Fela plugins
+- **Documentation**: Storybook 10
+- **Package Manager**: Yarn
+- **Linting**: ESLint with Flow plugin
+
+## Contributing
+
+1. Create a feature branch
+2. Make your changes
+3. Run `yarn flow` and `yarn lint` to ensure code quality
+4. Test your changes in Storybook
+5. Submit a pull request
+
+## License
+
+[Add your license here]
+
+## Repository
+
+https://github.com/innowellteam/care-ui
