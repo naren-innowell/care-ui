@@ -1,0 +1,67 @@
+{
+  "name": "@innowellteam/care-ui",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Care UI Component Library",
+  "main": "./dist/care-ui.cjs",
+  "module": "./dist/care-ui.mjs",
+  "exports": {
+    ".": {
+      "import": "./dist/care-ui.mjs",
+      "require": "./dist/care-ui.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "flow": "flow check",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0",
+    "react-fela": "~10.8.0"
+  },
+  "dependencies": {
+    "fela": "^12.2.1",
+    "fela-plugin-embedded": "^12.2.1",
+    "fela-plugin-fallback-value": "^12.2.1",
+    "fela-plugin-prefixer": "^12.2.1"
+  },
+  "devDependencies": {
+    "@babel/preset-flow": "^7.24.0",
+    "@eslint/js": "^9.39.1",
+    "@storybook/addon-essentials": "^8.6.14",
+    "@storybook/addon-interactions": "^8.6.14",
+    "@storybook/addon-links": "^10.1.11",
+    "@storybook/react": "^10.1.11",
+    "@storybook/react-vite": "^10.1.11",
+    "@vitejs/plugin-react": "^5.1.1",
+    "eslint": "^9.39.1",
+    "eslint-plugin-flowtype": "^8.0.3",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "flow-bin": "^0.231.0",
+    "globals": "^16.5.0",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "react-fela": "~10.8.0",
+    "storybook": "^10.1.11",
+    "vite": "^7.2.4"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/innowellteam/care-ui.git"
+  }
+}
