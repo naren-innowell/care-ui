@@ -3,6 +3,18 @@
   "version": "0.1.0",
   "type": "module",
   "description": "Care UI Component Library",
+  "keywords": [
+    "react",
+    "ui",
+    "components",
+    "component-library",
+    "care-ui",
+    "fela",
+    "flow",
+    "atomic-design"
+  ],
+  "author": "Innowell Team",
+  "license": "UNLICENSED",
   "main": "./dist/care-ui.cjs",
   "module": "./dist/care-ui.mjs",
   "exports": {
@@ -23,7 +35,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "prepublishOnly": "yarn build"
   },
   "peerDependencies": {
     "react": "^18.0.0 || ^19.0.0",
@@ -71,6 +84,7 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
+  "_comment": "To publish to npmjs.com instead, remove publishConfig or change registry to 'https://registry.npmjs.org'",
   "repository": {
     "type": "git",
     "url": "https://github.com/innowellteam/care-ui.git"
