@@ -27,6 +27,8 @@ export default defineConfig({
       formats: ['es', 'cjs'],
       fileName: (format) => `care-ui.${format === 'es' ? 'mjs' : 'cjs'}`,
     },
+    minify: 'esbuild',
+    sourcemap: false,
     rollupOptions: {
       external: ['react', 'react-dom', 'react/jsx-runtime', 'i18next', 'react-i18next'],
       output: {
@@ -35,6 +37,8 @@ export default defineConfig({
           'react-dom': 'ReactDOM',
           'react/jsx-runtime': 'react/jsx-runtime',
         },
+        // Prevent source file references in production
+        paths: {},
       },
     },
     commonjsOptions: {

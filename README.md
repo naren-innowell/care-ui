@@ -70,6 +70,18 @@ function App() {
 
 ### Using Components
 
+**Important**: Always import from the package root. The package is configured to use built files only:
+
+```javascript
+// ✅ Correct - uses built files
+import { Button, Box, Heading } from '@naren-innowell/care-ui';
+
+// ❌ Incorrect - will not work (source files are not published)
+// import { Button } from '@naren-innowell/care-ui/src/...'
+```
+
+Example usage:
+
 ```javascript
 import { Button, Box, Heading } from '@naren-innowell/care-ui';
 
@@ -84,6 +96,17 @@ function MyComponent() {
   );
 }
 ```
+
+### Build Configuration
+
+This package is built and optimized for production. The published package:
+- ✅ Contains only built files (`dist/`)
+- ✅ Source files are excluded from the published package
+- ✅ Uses ES modules (`.mjs`) and CommonJS (`.cjs`) formats
+- ✅ Properly externalizes peer dependencies
+- ✅ Is minified and optimized for production use
+
+**Note for consuming projects**: If you're using a bundler (webpack, vite, etc.), make sure it respects the `exports` field in `package.json`. The package is configured to only expose built files, preventing accidental imports from source files.
 
 ## Development
 

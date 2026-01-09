@@ -20,7 +20,8 @@
   "exports": {
     ".": {
       "import": "./dist/care-ui.mjs",
-      "require": "./dist/care-ui.cjs"
+      "require": "./dist/care-ui.cjs",
+      "default": "./dist/care-ui.mjs"
     },
     "./package.json": "./package.json"
   },
@@ -36,7 +37,7 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "prepublishOnly": "yarn build"
+    "prepublishOnly": "rm -rf dist && yarn build && rm -f dist/*.svg dist/*.png dist/*.jpg dist/*.jpeg dist/*.gif dist/*.ico"
   },
   "peerDependencies": {
     "react": "^18.0.0 || ^19.0.0",

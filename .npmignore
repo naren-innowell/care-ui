@@ -1,0 +1,59 @@
+# Source files - only dist should be published
+src/
+*.js
+*.jsx
+!dist/**/*.js
+!dist/**/*.mjs
+!dist/**/*.cjs
+
+# Development files
+.storybook/
+storybook-static/
+.vscode/
+.idea/
+*.log
+*.local
+
+# Config files
+.eslintrc*
+.eslint.config.js
+babel.config.*
+vite.config.js
+.flowconfig
+flow-typed/
+flow-stubs/
+
+# Dependencies
+node_modules/
+
+# Build artifacts (keep dist JS files only)
+dist-ssr/
+dist/*.svg
+dist/*.png
+dist/*.jpg
+dist/*.jpeg
+dist/*.gif
+dist/*.ico
+dist/*.woff
+dist/*.woff2
+dist/*.ttf
+dist/*.eot
+
+# Git
+.git/
+.gitignore
+
+# CI/CD
+.github/
+
+# Documentation (keep README.md)
+*.md
+!README.md
+
+# Misc
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
