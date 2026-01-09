@@ -19,9 +19,9 @@ Care UI is a comprehensive component library providing reusable React components
 ## Installation
 
 ```bash
-npm install @innowellteam/care-ui
+npm install @naren-innowell/care-ui
 # or
-yarn add @innowellteam/care-ui
+yarn add @naren-innowell/care-ui
 ```
 
 ### Peer Dependencies
@@ -71,7 +71,7 @@ function App() {
 ### Using Components
 
 ```javascript
-import { Button, Box, Heading } from '@innowellteam/care-ui';
+import { Button, Box, Heading } from '@naren-innowell/care-ui';
 
 function MyComponent() {
   return (
@@ -195,4 +195,4 @@ Make sure you have the `GITHUB_TOKEN` environment variable set or configured in 
 
 ## Repository
 
-https://github.com/innowellteam/care-ui
+https://github.com/naren-innowell/care-ui

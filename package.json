@@ -1,5 +1,5 @@
 {
-  "name": "@innowellteam/care-ui",
+  "name": "@naren-innowell/care-ui",
   "version": "0.1.0",
   "type": "module",
   "description": "Care UI Component Library",
@@ -87,6 +87,6 @@
   "_comment": "To publish to npmjs.com instead, remove publishConfig or change registry to 'https://registry.npmjs.org'",
   "repository": {
     "type": "git",
-    "url": "https://github.com/innowellteam/care-ui.git"
+    "url": "https://github.com/naren-innowell/care-ui.git"
   }
 }

@@ -16,7 +16,7 @@ jobs:
         with:
           node-version: '20'
           registry-url: 'https://npm.pkg.github.com'
-          scope: '@innowellteam'
+          scope: '@naren-innowell'
       - name: Install dependencies
         run: yarn install --frozen-lockfile
       - name: Flow type check

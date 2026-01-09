@@ -46,10 +46,10 @@ npm publish
 
 ### Step 1: Configure .npmrc in the Consuming Project
 
-Create or update `.npmrc` in the project where you want to install `@innowellteam/care-ui`:
+Create or update `.npmrc` in the project where you want to install `@naren-innowell/care-ui`:
 
 ```bash
-@innowellteam:registry=https://npm.pkg.github.com
+@naren-innowell:registry=https://npm.pkg.github.com
 //npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
 ```
 
@@ -66,15 +66,15 @@ export GITHUB_TOKEN=your_github_token_here
 ### Step 3: Install the Package
 
 ```bash
-npm install @innowellteam/care-ui
+npm install @naren-innowell/care-ui
 # or
-yarn add @innowellteam/care-ui
+yarn add @naren-innowell/care-ui
 ```
 
 ### Step 4: Use the Package
 
 ```javascript
-import { Button, Box, Heading } from '@innowellteam/care-ui';
+import { Button, Box, Heading } from '@naren-innowell/care-ui';
 
 function MyComponent() {
   return (
@@ -118,7 +118,7 @@ Or create a custom secret with a Personal Access Token that has `read:packages` 
 - Verify the token has `read:packages` permission
 
 ### Package not found
-- Check the package name matches: `@innowellteam/care-ui`
+- Check the package name matches: `@naren-innowell/care-ui`
 - Verify the registry URL is correct in `.npmrc`
 - Ensure you have access to the `innowellteam` organization
 

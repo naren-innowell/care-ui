@@ -4,7 +4,7 @@
 
 **Benefits:**
 - ✅ No authentication required for installation
-- ✅ Can install with just: `npm install @innowellteam/care-ui`
+- ✅ Can install with just: `npm install @naren-innowell/care-ui`
 - ✅ Works like any other npm package
 - ✅ No `.npmrc` configuration needed in consuming projects
 
@@ -33,7 +33,7 @@ npm publish
 
 4. **Install in other projects (no token needed!):**
 ```bash
-npm install @innowellteam/care-ui
+npm install @naren-innowell/care-ui
 ```
 
 **Note:** You'll need to create an npm account at https://www.npmjs.com/signup if you don't have one.
