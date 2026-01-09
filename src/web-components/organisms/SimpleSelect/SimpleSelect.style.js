@@ -2,7 +2,7 @@
 
 import { type ThemeType } from 'web-components/atoms'
 
-export const selectBoxWrapper = () => ({
+export const selectBoxWrapper = (): any => ({
   position: 'relative',
   width: '100%',
 })
@@ -15,7 +15,7 @@ export const optionsContainer = ({
   label?: string,
   position: string,
   theme: ThemeType,
-}) => {
+}): any => {
   const defaultStyle = {
     display: 'block',
     position: 'absolute',
@@ -28,26 +28,26 @@ export const optionsContainer = ({
     minWidth: '100%',
   }
 
-  const positionStyle = {}
+  const positionStyle: { [key: string]: any } = {}
 
   // REVERSE
   if (position === 'reverse') {
-    positionStyle.top = 0
-    positionStyle.right = 0
+    positionStyle.top = '0'
+    positionStyle.right = '0'
     positionStyle.transform = label ? 'translateY(-90%)' : 'translateY(-105%)'
   }
 
   return {
-    ...defaultStyle,
-    ...positionStyle,
+    ...(defaultStyle: { [key: string]: any }),
+    ...(positionStyle: { [key: string]: any }),
   }
 }
 
-export const optionImageStyle = ({ theme }: { theme: ThemeType }) => ({
+export const optionImageStyle = ({ theme }: { theme: ThemeType }): any => ({
   width: theme.care.spacing.md,
 })
 
-export const labelStyle = ({ theme }: { theme: ThemeType }) => ({
+export const labelStyle = ({ theme }: { theme: ThemeType }): any => ({
   color: theme.care.palette.text.positive,
   ...theme.care.typography.desktop.bodyMd,
 })

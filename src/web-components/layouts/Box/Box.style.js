@@ -12,15 +12,14 @@ type BoxContainerStyleProps = {
   borderRadius?: string,
   borderTop?: string,
   boxShadow?: string,
-  children?: Node,
   direction?: 'row' | 'column' | 'row-reverse' | 'column-reverse',
   display?: string,
   height?: string,
   justifyContent?: string,
   marginBottom?: string,
   marginTop?: string,
-  marginX?: string,
-  marginY?: string,
+  marginX?: string | number,
+  marginY?: string | number,
   maxHeight?: string,
   maxWidth?: string,
   minHeight?: string,
@@ -29,8 +28,8 @@ type BoxContainerStyleProps = {
   overflow?: 'auto' | 'hidden' | 'none' | 'scroll',
   paddingLeft?: string,
   paddingTop?: string,
-  paddingX?: string,
-  paddingY?: string,
+  paddingX?: string | number,
+  paddingY?: string | number,
   position?: string,
   textAlign?: string,
   theme: ThemeType,
@@ -39,7 +38,7 @@ type BoxContainerStyleProps = {
   zIndex?: number,
 }
 
-export const boxContainer = (props: BoxContainerStyleProps) => {
+export const boxContainer = (props: BoxContainerStyleProps): { [key: string]: any } => {
   const {
     theme,
     marginX = 0,

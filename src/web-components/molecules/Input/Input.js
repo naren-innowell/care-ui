@@ -39,7 +39,7 @@ type PropsType = {
   value: string | number,
 }
 
-const Input = (props: PropsType) => {
+const Input = (props: PropsType): React$Node => {
   const {
     autoComplete,
     disabled = false,

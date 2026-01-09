@@ -1,6 +1,6 @@
 // @flow
 
-import React, { type Node } from 'react'
+import React from 'react'
 import { useFela } from 'react-fela'
 
 import Divider from '../Divider/Divider'
@@ -18,10 +18,10 @@ type DataTableProps = {
   emptyStateHeadingText: string,
   emptyStateSubHeadingText: string,
   headers: Array<{ key: string, label: string }>,
-  rows: Array<Node>,
+  rows: Array<React$Node>,
 }
 
-const DataTable = (props: DataTableProps) => {
+const DataTable = (props: DataTableProps): React$Node => {
   const {
     headers,
     rows,

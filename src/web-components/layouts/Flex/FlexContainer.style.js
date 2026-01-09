@@ -30,12 +30,12 @@ type FlexContainerStyleProps = {
   wrap?: 'wrap' | 'nowrap',
 }
 
-export const flexContainer = (props: FlexContainerStyleProps) => {
+export const flexContainer = (props: FlexContainerStyleProps): { [key: string]: any } => {
   const {
     theme,
     direction,
-    paddingX = 0,
-    paddingY = 0,
+    paddingX = '0',
+    paddingY = '0',
     marginTop,
     justifyContent,
     alignItems,

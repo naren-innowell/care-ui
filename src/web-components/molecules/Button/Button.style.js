@@ -7,7 +7,9 @@ type GetPaddingProps = {
   icon?: string,
   leftIcon?: string,
   rightIcon?: string,
+  size?: 'lg' | 'md' | 'sm',
   theme: ThemeType,
+  isIconButton?: boolean,
 }
 
 const getPadding = (props: GetPaddingProps) => {
@@ -42,7 +44,7 @@ type SizeStyleProps = {
   theme: ThemeType,
 }
 
-export const sizeStyle = (props: SizeStyleProps) => {
+export const sizeStyle = (props: SizeStyleProps): { [key: string]: any } => {
   const { size = 'md', theme } = props
 
   // large size
@@ -75,7 +77,7 @@ type VariantStyleProps = {
   variant?: 'primary' | 'secondary' | 'text' | 'pill' | 'danger' | 'link',
 }
 
-export const variantStyle = (props: VariantStyleProps) => {
+export const variantStyle = (props: VariantStyleProps): { [key: string]: any } => {
   const { theme, variant, active, icon } = props
 
   const disabledStyle = {
@@ -191,7 +193,7 @@ type DefaultStyleProps = {
   theme: ThemeType,
 }
 
-export const defaultStyle = (props: DefaultStyleProps) => {
+export const defaultStyle = (props: DefaultStyleProps): { [key: string]: any } => {
   const { theme, fullWidth, leftIcon } = props
 
   return {

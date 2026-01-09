@@ -4,7 +4,7 @@ import React, { useRef } from 'react'
 import { useFela } from 'react-fela'
 import { useClickAway } from 'react-use'
 
-import { truncateText } from 'platform_web/utility/formatText'
+import { truncateText } from '../../../utilities/formatText'
 import { Box, Button, DropDownMenuItem, ScrollableBox } from 'web-components'
 import { ChevronDownIcon } from 'web-components/atoms/icons-new'
 import FlexContainer from 'web-components/layouts/Flex/FlexContainer'
@@ -18,7 +18,7 @@ import {
 import useSimpleSelect from './useSimpleSelect'
 
 type OptionType = {
-  icon?: Node | string,
+  icon?: React$Node | string,
   label: string,
   value: string,
 }
@@ -41,7 +41,7 @@ type SimpleSelectProps = {
   variant?: 'primary' | 'secondary' | 'text' | 'pill' | 'danger',
 }
 
-const SimpleSelect = (props: SimpleSelectProps) => {
+const SimpleSelect = (props: SimpleSelectProps): React$Node => {
   const {
     defaultOption,
     label,
@@ -80,7 +80,7 @@ const SimpleSelect = (props: SimpleSelectProps) => {
   useClickAway(ref, closeSelectBox)
 
   // Label for dropdown
-  const getLabel = (option) => {
+  const getLabel = (option: OptionType) => {
     // options with icon/image
     const { icon } = option || {}
 

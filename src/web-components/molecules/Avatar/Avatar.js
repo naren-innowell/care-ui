@@ -12,7 +12,7 @@ type PropsType = {
   requireSupport?: boolean,
 }
 
-const AvatarNew = (props: PropsType) => {
+const AvatarNew = (props: PropsType): React$Node => {
   const { avatarInitials } = props
   const { css } = useFela({ ...props })
 

@@ -1,4 +1,4 @@
-/* eslint-disable import/no-unused-modules */
+
 // @flow
 
 import ActivityIcon from 'web-components/atoms/icons-new/Activity.svg'

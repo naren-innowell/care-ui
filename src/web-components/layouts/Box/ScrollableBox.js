@@ -1,22 +1,22 @@
 // @flow
 
-import React, { type Node, useEffect, useRef, useState } from 'react'
+import React from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useFela } from 'react-fela'
-import type { Disposable } from 'relay-runtime'
 
 import { scrollableBoxContainer } from './ScrollableBox.style'
 
 type PropTypes = {
   backgroundColor?: string,
-  children?: Node,
+  children?: React$Node,
   dataTestId?: string,
   direction?: 'horizontal' | 'vertical',
   maxHeight?: string,
   maxWidth?: string,
-  onScroll?: (event?: Event) => void | Disposable,
+  onScroll?: (event?: Event) => void | SyntheticEvent<any>,
 }
 
-const ScrollableBox = (props: PropTypes) => {
+const ScrollableBox = (props: PropTypes): React$Node => {
   const { children, onScroll, dataTestId } = props
   const [hasScrollbar, setHasScrollbar] = useState(false)
 

@@ -20,24 +20,24 @@ export const gridItemStyle = ({
   lg,
   xl,
   center,
-}: PropsType) => ({
+}: PropsType): { [key: string]: any } => ({
   display: 'flex',
   boxSizing: 'border-box',
   gridColumn: `span 12`,
   alignItems: 'center',
   gap: theme.care.spacing.sm,
   justifyContent: center ? 'center' : 'flex-start',
-  ...(xs && { gridColumn: `span ${xs}` }),
-  [theme.care.breakpoints.queries.md]: {
-    ...(sm && { gridColumn: `span ${sm}` }),
+  ...(typeof xs === 'number' && { gridColumn: `span ${xs}` }),
+  [theme.care.breakpoints.queries.sm]: {
+    ...(typeof sm === 'number' && { gridColumn: `span ${sm}` }),
   },
   [theme.care.breakpoints.queries.md]: {
-    ...(md && { gridColumn: `span ${md}` }),
+    ...(typeof md === 'number' && { gridColumn: `span ${md}` }),
   },
   [theme.care.breakpoints.queries.lg]: {
-    ...(lg && { gridColumn: `span ${lg}` }),
+    ...(typeof lg === 'number' && { gridColumn: `span ${lg}` }),
   },
   [theme.care.breakpoints.queries.xl]: {
-    ...(xl && { gridColumn: `span ${xl}` }),
+    ...(typeof xl === 'number' && { gridColumn: `span ${xl}` }),
   },
 })

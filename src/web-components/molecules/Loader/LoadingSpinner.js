@@ -4,18 +4,19 @@ import React from 'react'
 import { useFela } from 'react-fela'
 import { useTranslation } from 'react-i18next'
 
-import Grid from 'react-ui/assets/images/grid.svg'
+import Grid from '../../../assets/grid.svg'
+import { type ThemeType } from 'web-components/atoms'
 
 type PropTypes = {
   message?: string,
 }
 
-const spinnerStyle = ({ theme }) => ({
+const spinnerStyle = ({ theme }: { theme: ThemeType }): any => ({
   width: '50px',
   fill: theme.care.palette.surface.accentLight,
 })
 
-const loaderWrapperStyle = () => ({
+const loaderWrapperStyle = (): any => ({
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
@@ -26,13 +27,13 @@ const loaderWrapperStyle = () => ({
   textAlign: 'center',
 })
 
-const loaderTitleStyle = ({ theme }) => ({
+const loaderTitleStyle = ({ theme }: { theme: ThemeType }): any => ({
   marginTop: '10px',
   textAlign: 'center',
   ...theme.care.typography.desktop.h2,
 })
 
-const loaderSubMessageStyle = ({ theme }) => ({
+const loaderSubMessageStyle = ({ theme }: { theme: ThemeType }): any => ({
   marginTop: '3px',
   textAlign: 'center',
   color: theme.care.palette.text.positive,
@@ -40,7 +41,7 @@ const loaderSubMessageStyle = ({ theme }) => ({
   fontWeight: 100,
 })
 
-const LoadingSpinner = ({ message }: PropTypes) => {
+const LoadingSpinner = ({ message }: PropTypes): React$Node => {
   const { css } = useFela()
 
   // LOcalization

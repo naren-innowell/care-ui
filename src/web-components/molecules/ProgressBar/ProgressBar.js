@@ -16,7 +16,7 @@ type PropsType = {
   variant?: 'normal' | 'skippable',
 }
 
-const ProgressBar = (props: PropsType) => {
+const ProgressBar = (props: PropsType): React$Node => {
   const {
     value,
     dataTestId,
@@ -53,14 +53,14 @@ const ProgressBar = (props: PropsType) => {
     )
   }
 
-  const clampValue = (valueReceived, min, max) => {
+  const clampValue = (valueReceived: number, min: number, max: number): number => {
     if (valueReceived === null || valueReceived === undefined) {
       return min
     }
     return Math.max(min, Math.min(valueReceived, max))
   }
 
-  const clampedValue = clampValue(value, 0, 100)
+  const clampedValue = clampValue(value ?? 0, 0, 100)
 
   return (
     <div

@@ -14,7 +14,7 @@ type PropsType = {
   size?: 'lg' | 'md',
 }
 
-const Tab = (props: PropsType) => {
+const Tab = (props: PropsType): React$Node => {
   const { label, onClick, dataTestId } = props
 
   const { css } = useFela({ ...props })

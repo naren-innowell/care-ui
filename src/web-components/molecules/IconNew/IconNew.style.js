@@ -12,7 +12,7 @@ type IconStyleProps = {
   theme: ThemeType,
 }
 
-export const iconStyle = (props: IconStyleProps) => {
+export const iconStyle = (props: IconStyleProps): { [key: string]: any } => {
   const {
     theme,
     size = 'md',

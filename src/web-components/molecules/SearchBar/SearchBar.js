@@ -24,7 +24,7 @@ type PropsType = {
   size?: 'lg' | 'md',
 }
 
-const SearchBar = (props: PropsType) => {
+const SearchBar = (props: PropsType): React$Node => {
   const {
     size = 'md',
     inputAttributes,

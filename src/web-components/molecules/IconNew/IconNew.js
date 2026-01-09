@@ -13,7 +13,7 @@ type PropsType = {
   size?: 'xl' | 'lg' | 'md' | 'sm',
 }
 
-const IconNew = (props: PropsType) => {
+const IconNew = (props: PropsType): React$Node => {
   const { as: Component, onClick } = props
 
   const { css } = useFela({ ...props })

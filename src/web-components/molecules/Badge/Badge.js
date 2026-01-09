@@ -1,5 +1,5 @@
 // @flow
-// eslint-disable-next-line flowtype/newline-after-flow-annotation
+ 
 import React from 'react'
 import { useFela } from 'react-fela'
 
@@ -16,7 +16,7 @@ type PropTypes = {
   variant?: 'general' | 'good' | 'moderate' | 'mild' | 'concern' | 'beta',
 }
 
-const Badge = (props: PropTypes) => {
+const Badge = (props: PropTypes): React$Node => {
   const { label, variant = 'general' } = props
   const { css } = useFela({ ...props })
 

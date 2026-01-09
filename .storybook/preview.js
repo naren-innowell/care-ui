@@ -13,6 +13,7 @@ const preview = {
     },
   },
   decorators: [
+    // eslint-disable-next-line no-unused-vars
     (Story) => (
       <RendererProvider renderer={renderer}>
         <Story />

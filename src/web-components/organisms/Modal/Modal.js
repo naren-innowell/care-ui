@@ -1,6 +1,6 @@
 // @flow
 
-import React, { type Node, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import ReactDOM from 'react-dom'
 import { useFela } from 'react-fela'
 
@@ -17,10 +17,10 @@ import {
 } from './Modal.style'
 
 type PropsType = {
-  children: Node,
+  children: React$Node,
   closeModal: () => void,
   dataTestId?: string,
-  footer?: Node,
+  footer?: React$Node,
   heading?: string,
   height?: string,
   isOpen: boolean,
@@ -30,7 +30,7 @@ type PropsType = {
 
 //  When `useCustomOverlay` is true, we render a custom <div>-based modal instead of the native <dialog> element. This is primarily used to support tours, where the native dialog's behavior interfere with z-index stacking
 
-const Modal = (props: PropsType) => {
+const Modal = (props: PropsType): React$Node => {
   const {
     children,
     isOpen,

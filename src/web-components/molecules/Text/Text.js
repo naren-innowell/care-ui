@@ -3,6 +3,7 @@
 import React from 'react'
 import { useFela } from 'react-fela'
 import { capitalize } from 'lodash'
+import type { ThemeType } from "../../atoms";
 
 type PropsType = {
   ariaLabel?: string,
@@ -27,7 +28,7 @@ const textStyle = ({
   center,
   margin,
   wrap = 'wrap',
-}) => {
+}: { theme: ThemeType, bold?: boolean, size?: 'sm' | 'md' | 'lg', color?: 'positive' | 'title' | 'subtitle', center?: boolean, margin?: 'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl', wrap?: 'nowrap' | 'wrap' }): any => {
   const sizeProp = bold
     ? `body${capitalize(size)}Bold`
     : `body${capitalize(size)}`
@@ -54,6 +55,7 @@ const Text = ({
   size = 'md',
   extend,
   className = '',
+  // eslint-disable-next-line no-unused-vars
   as: Component = 'p',
   color = 'positive',
   bold,
@@ -62,7 +64,7 @@ const Text = ({
   dataTestId,
   ariaLabel,
   ...rest
-}: PropsType) => {
+}: PropsType): React$Node => {
   const { css } = useFela({ bold, size, color, center, margin })
 
   const allClasses = `${css([textStyle, extend])} ${className}`

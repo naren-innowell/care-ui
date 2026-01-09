@@ -39,13 +39,14 @@ const Select = ({
   dataTestId,
   ariaLabel,
   size,
-}: PropsType) => {
+}: PropsType): React$Node => {
   const [selected, setSelected] = useState()
   const { css } = useFela({ size })
 
   useEffect(
     () => {
       if (value) {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setSelected(value)
         return
       }
@@ -62,9 +63,10 @@ const Select = ({
     [value, options, valueKey],
   )
 
-  const handleSelectChange = event => {
-    const { value: targetValue } = event.target
+  const handleSelectChange = (event: SyntheticEvent<HTMLSelectElement>): void => {
+    const { value: targetValue } = event.currentTarget
 
+     
     setSelected(targetValue)
 
     if (onChange) {
@@ -72,7 +74,7 @@ const Select = ({
     }
   }
 
-  const objectOption = option => {
+  const objectOption = (option: any): React$Node => {
     if (!valueKey || !labelKey) {
       throw new Error(
         'valueKey and labelKey are required when options are objects',
@@ -89,13 +91,13 @@ const Select = ({
     )
   }
 
-  const stringOption = option => (
+  const stringOption = (option: any): React$Node => (
     <option key={uniqueId('option-')} value={option}>
       {option}
     </option>
   )
 
-  const renderedOption = option =>
+  const renderedOption = (option: any): React$Node =>
     typeof option === 'object' ? objectOption(option) : stringOption(option)
 
   return (

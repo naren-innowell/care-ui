@@ -1,6 +1,6 @@
 // @flow
 
-import React, { type Node, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { uniqueId } from 'lodash'
 
 import FlexContainer from '../../layouts/Flex/FlexContainer'
@@ -11,7 +11,7 @@ type PropsType = {
   defaultTab: number,
   onChange: (tab: number) => void,
   tabs: Array<{
-    content: Node,
+    content: React$Node,
     dataTestId?: string,
     disabled?: boolean,
     label: string,
@@ -19,12 +19,13 @@ type PropsType = {
   }>,
 }
 
-const Tabs = ({ tabs, onChange, defaultTab }: PropsType) => {
+const Tabs = ({ tabs, onChange, defaultTab }: PropsType): React$Node => {
   const [selectedTab, setSelectedTab] = useState(defaultTab)
 
   useEffect(
     () => {
       if (defaultTab) {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setSelectedTab(defaultTab)
       } else {
         setSelectedTab(0)
@@ -33,7 +34,7 @@ const Tabs = ({ tabs, onChange, defaultTab }: PropsType) => {
     [defaultTab],
   )
 
-  const handleTabClick = tab => {
+  const handleTabClick = (tab: number) => {
     setSelectedTab(tab)
     onChange(tab)
   }

@@ -1,6 +1,6 @@
 // @flow
 
-import React, { type Element, type Node } from 'react'
+import React, { type Element } from 'react'
 import { useRef, useState } from 'react'
 import { useFela } from 'react-fela'
 import { useClickAway } from 'react-use'
@@ -8,7 +8,7 @@ import { useClickAway } from 'react-use'
 import { dropdown, dropdownContent } from './DropDownMenu.style'
 
 type PropsType = {
-  children?: Node,
+  children?: React$Node,
   closeDropDown?: boolean,
   dropDownTrigger: Element<any>,
   fullWidth?: boolean,
@@ -18,7 +18,7 @@ type PropsType = {
   setCloseDropDown?: (arg: boolean) => void,
 }
 
-const DropDownMenu = (props: PropsType) => {
+const DropDownMenu = (props: PropsType): React$Node => {
   const {
     dropDownTrigger,
     children,

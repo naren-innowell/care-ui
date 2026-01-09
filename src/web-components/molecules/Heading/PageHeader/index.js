@@ -4,7 +4,6 @@ import React from 'react'
 import { useFela } from 'react-fela'
 import { useTranslation } from 'react-i18next'
 
-import Section from 'react-ui/components/Section'
 import { Button, Container, Heading } from 'web-components'
 import ChevronLeft from 'web-components/atoms/icons/chevron-left.svg'
 import { type ToPropType } from 'web-components/molecules/Button/Button'
@@ -21,7 +20,7 @@ type PropsType = {
   linkTo: ToPropType,
 }
 
-const PageHeader = (props: PropsType) => {
+const PageHeader = (props: PropsType): React$Node => {
   const { children, linkTo, action } = props
   const { css } = useFela()
 
@@ -29,7 +28,6 @@ const PageHeader = (props: PropsType) => {
 
   return (
     <header className={css(headerStyle)}>
-      <Section noPadding color="white">
         <Container extend={wrapperStyle}>
           <div className={css(scoreCardsHeaderStyle)}>
             <Heading level={1}>{children}</Heading>
@@ -47,7 +45,6 @@ const PageHeader = (props: PropsType) => {
 
           <div>{action && action}</div>
         </Container>
-      </Section>
     </header>
   )
 }

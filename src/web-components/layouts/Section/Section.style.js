@@ -7,7 +7,7 @@ type Props = {
   theme: ThemeType,
 }
 
-export const containerStyle = ({ theme, color }: Props) => ({
+export const containerStyle = ({ theme, color }: Props): { [key: string]: any } => ({
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',

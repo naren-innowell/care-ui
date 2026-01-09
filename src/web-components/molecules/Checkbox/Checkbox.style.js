@@ -7,7 +7,7 @@ type SizeStyleProps = {
   theme: ThemeType,
 }
 
-export const sizeStyle = (props: SizeStyleProps) => {
+export const sizeStyle = (props: SizeStyleProps): { [key: string]: any } => {
   const { size, theme } = props
 
   // Styles for large size
@@ -37,7 +37,7 @@ type WrapperStyleProps = {
   theme: ThemeType,
 }
 
-export const wrapperStyle = (props: WrapperStyleProps) => {
+export const wrapperStyle = (props: WrapperStyleProps): { [key: string]: any } => {
   const { theme, partial, required, disabled } = props
 
   return {
@@ -121,27 +121,31 @@ type LabelStylesProps = {
   theme: ThemeType,
 }
 
-export const labelStyles = (props: LabelStylesProps) => {
+export const labelStyles = (props: LabelStylesProps): { [key: string]: any } => {
   const { required, checked, disabled, theme } = props
-  const requiredStyle = {}
+  const requiredStyle: { [key: string]: any } = {}
 
   if (required && !checked) {
     requiredStyle.color = theme.care.palette.text.danger
   }
 
-  const disabledStyle = {}
+  const disabledStyle: { [key: string]: any } = {}
 
   if (disabled) {
     disabledStyle.color = theme.care.palette.text.disabled
     disabledStyle.cursor = 'default'
   }
 
-  return {
+  const labelStyle: { [key: string]: any } = {
+    ...requiredStyle,
+    ...disabledStyle,
     cursor: 'pointer',
     color: theme.care.palette.text.positive,
     paddingLeft: theme.care.spacing.xxs,
-    ...requiredStyle,
-    ...disabledStyle,
+  }
+
+  return {
+    ...labelStyle,
   }
 }
 
@@ -149,7 +153,7 @@ type ErrorTextStyleProps = {
   theme: ThemeType,
 }
 
-export const errorTextStyle = (props: ErrorTextStyleProps) => {
+export const errorTextStyle = (props: ErrorTextStyleProps): { [key: string]: any } => {
   const { theme } = props
 
   return {

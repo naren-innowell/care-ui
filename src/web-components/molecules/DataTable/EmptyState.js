@@ -12,7 +12,7 @@ type EmptyStatePropsType = {
   subHeadingText: string,
 }
 
-const EmptyState = (props: EmptyStatePropsType) => {
+const EmptyState = (props: EmptyStatePropsType): React$Node => {
   const { headingText, subHeadingText } = props
 
   return (

@@ -29,7 +29,7 @@ type PropsType = {
   size?: 'lg' | 'md',
 }
 
-const Checkbox = (props: PropsType) => {
+const Checkbox = (props: PropsType): React$Node => {
   const { inputAttributes, error, dataTestId, ariaLabel, size = 'md' } = props
   const {
     id,

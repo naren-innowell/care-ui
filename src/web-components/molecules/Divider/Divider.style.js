@@ -6,7 +6,7 @@ type DividerStyleProps = {
   theme: ThemeType,
   variant?: 'default' | 'positive',
 }
-export const dividerStyle = (props: DividerStyleProps) => {
+export const dividerStyle = (props: DividerStyleProps): { [key: string]: any } => {
   const { theme, variant = 'positive' } = props
 
   const borderBottomColor =

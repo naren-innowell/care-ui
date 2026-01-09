@@ -29,7 +29,7 @@ type TextStyle = {
   whiteSpace?: 'nowrap' | 'wrap',
 }
 
-export const textStyle = (props: TextStyle) => {
+export const textStyle = (props: TextStyle): any => {
   const {
     typography,
     theme,

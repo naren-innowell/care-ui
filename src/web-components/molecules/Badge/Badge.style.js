@@ -16,7 +16,7 @@ type SizeStyleProps = {
   theme: ThemeType,
 }
 
-export const sizeStyle = (props: SizeStyleProps) => {
+export const sizeStyle = (props: SizeStyleProps): { [key: string]: any } => {
   const { size, theme } = props
 
   // large size
@@ -38,7 +38,7 @@ type VariantStylePropsProps = {
   variant: 'general' | 'good' | 'moderate' | 'mild' | 'concern',
 }
 
-export const variantStyle = (props: VariantStylePropsProps) => {
+export const variantStyle = (props: VariantStylePropsProps): { [key: string]: any } => {
   const { variant = 'general', theme } = props
 
   return {
@@ -51,7 +51,7 @@ type BadgeContainerProps = {
   variant: 'general' | 'good' | 'moderate' | 'mild' | 'concern',
 }
 
-export const badgeContainer = (props: BadgeContainerProps) => {
+export const badgeContainer = (props: BadgeContainerProps): { [key: string]: any } => {
   const { theme } = props
 
   return {
@@ -64,10 +64,10 @@ export const badgeContainer = (props: BadgeContainerProps) => {
 
 type BetaVariantStyleProps = {
   theme: ThemeType,
-  variant: 'general' | 'good' | 'moderate' | 'mild' | 'concern',
+  variant: 'general' | 'good' | 'moderate' | 'mild' | 'concern' | 'beta',
 }
 
-export const betaVariantStyle = (props: BetaVariantStyleProps) => {
+export const betaVariantStyle = (props: BetaVariantStyleProps): { [key: string]: any } => {
   const { variant, theme } = props
 
   if (variant === 'beta') {

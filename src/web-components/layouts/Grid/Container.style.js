@@ -11,7 +11,9 @@ type PropsType = {
   theme: ThemeType,
 }
 
-export const containerStyle = ({ theme, extend }: PropsType) => ({
+export const containerStyle = ({ theme, extend }: PropsType): { [key: string]: any } => {
+  return {
+    ...(extend && extend({ theme })),
   width: '100%',
   paddingRight: theme.care.spacing.md,
   paddingLeft: theme.care.spacing.md,
@@ -26,5 +28,5 @@ export const containerStyle = ({ theme, extend }: PropsType) => ({
     marginLeft: 'auto',
     marginRight: 'auto',
   },
-  ...(extend && extend({ theme })),
-})
+  }
+}

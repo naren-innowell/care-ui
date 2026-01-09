@@ -6,7 +6,7 @@ type DataTableProps = {
   theme: ThemeType,
 }
 
-export const dataTable = ({ theme }: DataTableProps) => {
+export const dataTable = ({ theme }: DataTableProps): { [key: string]: any } => {
   return {
     minWidth: '1024px',
     width: '100%',
@@ -17,21 +17,21 @@ export const dataTable = ({ theme }: DataTableProps) => {
   }
 }
 
-export const thStyles = ({ theme }: DataTableProps) => {
+export const thStyles = ({ theme }: DataTableProps): { [key: string]: any } => {
   return {
     paddingRight: theme.care.spacing.xxl,
     fontWeight: 'inherit',
   }
 }
 
-export const lastColumnStyles = () => {
+export const lastColumnStyles = (): { [key: string]: any } => {
   return {
     paddingRight: '0',
     fontWeight: 'inherit',
   }
 }
 
-export const tbodyStyles = ({ theme }: DataTableProps) => {
+export const tbodyStyles = ({ theme }: DataTableProps): { [key: string]: any } => {
   return {
     color: theme.care.palette.text.positive,
     '> tr': {
@@ -41,6 +41,6 @@ export const tbodyStyles = ({ theme }: DataTableProps) => {
   }
 }
 
-export const emptyStateStyles = () => ({
+export const emptyStateStyles = (): { [key: string]: any } => ({
   height: '60vh',
 })

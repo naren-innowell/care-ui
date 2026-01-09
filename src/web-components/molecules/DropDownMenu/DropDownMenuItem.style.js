@@ -7,7 +7,7 @@ type SizeStyleProps = {
   theme: ThemeType,
 }
 
-export const sizeStyle = (props: SizeStyleProps) => {
+export const sizeStyle = (props: SizeStyleProps): { [key: string]: any } => {
   const { size = 'md', theme } = props
 
   // large size
@@ -29,7 +29,7 @@ type MenuItemStyleProps = {
   theme: ThemeType,
 }
 
-export const menutItemStyle = (props: MenuItemStyleProps) => {
+export const menutItemStyle = (props: MenuItemStyleProps): { [key: string]: any } => {
   const { theme, isActive, isFocused } = props
 
   return {

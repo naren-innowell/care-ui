@@ -6,7 +6,7 @@ type ModalStyleProps = {
   theme: ThemeType,
   width: string,
 }
-export const modalStyle = ({ theme, width }: ModalStyleProps) => ({
+export const modalStyle = ({ theme, width }: ModalStyleProps): any => ({
   background: theme.care.palette.surface.default,
   width: width || '70vw',
   overflow: 'auto',
@@ -18,7 +18,7 @@ export const modalStyle = ({ theme, width }: ModalStyleProps) => ({
   },
 })
 
-export const modalHeader = ({ theme }: { theme: ThemeType }) => ({
+export const modalHeader = ({ theme }: { theme: ThemeType }): any => ({
   borderBottom: `1px solid ${theme.care.palette.border.subtle}`,
   padding: `${theme.care.spacing.sm} ${theme.care.spacing.lg}`,
   display: 'flex',
@@ -33,12 +33,12 @@ export const modalBody = ({
 }: {
   height: string,
   theme: ThemeType,
-}) => ({
+}): any => ({
   padding: `${theme.care.spacing.sm} ${theme.care.spacing.lg}`,
   height: height || 'auto',
 })
 
-export const modalFooter = ({ theme }: { theme: ThemeType }) => ({
+export const modalFooter = ({ theme }: { theme: ThemeType }): any => ({
   padding: `${theme.care.spacing.sm} ${theme.care.spacing.lg}`,
   display: 'flex',
   flexDirection: 'row',
@@ -46,7 +46,7 @@ export const modalFooter = ({ theme }: { theme: ThemeType }) => ({
   alignItems: 'center',
 })
 
-export const modalOverlay = () => ({
+export const modalOverlay = (): any => ({
   position: 'fixed',
   top: 0,
   left: 0,
@@ -59,7 +59,7 @@ export const modalOverlay = () => ({
   zIndex: 999,
 })
 
-export const modalContainer = ({ theme, width }: ModalStyleProps) => ({
+export const modalContainer = ({ theme, width }: ModalStyleProps): any => ({
   background: theme.care.palette.surface.default,
   borderRadius: theme.care.radius.md,
   width: width || '70vw',

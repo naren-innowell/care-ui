@@ -2,12 +2,12 @@
 
 import { type ThemeType } from 'web-components/atoms'
 
-export const headerStyle = () => ({
+export const headerStyle = (): { [key: string]: any } => ({
   paddingTop: '2.4rem',
   textAlign: 'center',
 })
 
-export const scoreCardsHeaderStyle = ({ theme }: ThemeType) => ({
+export const scoreCardsHeaderStyle = ({ theme }: ThemeType): { [key: string]: any } => ({
   fontSize: '1.6rem',
   display: 'flex',
   flexDirection: 'column',
@@ -19,7 +19,7 @@ export const scoreCardsHeaderStyle = ({ theme }: ThemeType) => ({
   },
 })
 
-export const wrapperStyle = ({ theme }: ThemeType) => ({
+export const wrapperStyle = ({ theme }: ThemeType): { [key: string]: any } => ({
   margin: 'auto',
   display: 'flex',
   justifyContent: 'space-between',

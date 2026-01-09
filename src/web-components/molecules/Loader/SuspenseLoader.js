@@ -1,15 +1,15 @@
 // @flow
 
-import React, { type Node, Suspense } from 'react'
+import React, { Suspense } from 'react'
 
 import LoadingSpinner from './LoadingSpinner'
 
 type PropsType = {
-  children: Node,
+  children: React$Node,
   message?: string,
 }
 
-const SuspenseLoader = ({ message, children }: PropsType) => {
+const SuspenseLoader = ({ message, children }: PropsType): React$Node => {
   return (
     <Suspense fallback={<LoadingSpinner message={message} />}>
       {children}

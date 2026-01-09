@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 
-const useSearchBar = () => {
+const useSearchBar = (): any => {
   const [searchString, setSearchString] = useState('')
 
   const handleOnChange = (e: SyntheticInputEvent<>) => {

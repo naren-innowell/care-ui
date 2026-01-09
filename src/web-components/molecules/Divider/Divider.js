@@ -9,7 +9,7 @@ type DividerProps = {
   variant?: 'default' | 'positive',
 }
 
-const Divider = (props: DividerProps) => {
+const Divider = (props: DividerProps): React$Node => {
   const { css } = useFela({ ...props })
 
   return <div className={css(dividerStyle)} />

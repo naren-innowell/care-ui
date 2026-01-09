@@ -17,7 +17,7 @@ type LabelStyleProps = WrapperStyleProps & {
   wrapLabel?: boolean,
 }
 
-export const sizeStyle = (props: SizeStyleProps) => {
+export const sizeStyle = (props: SizeStyleProps): any => {
   const { size, theme } = props
 
   // large size
@@ -37,7 +37,7 @@ export const wrapperStyle = ({
   theme,
   disabled,
   checked,
-}: WrapperStyleProps) => {
+}: WrapperStyleProps): any => {
   return {
     cursor: disabled ? 'default' : 'pointer',
     display: 'flex',
@@ -74,7 +74,7 @@ export const labelStyles = ({
   disabled,
   wrapLabel,
   theme,
-}: LabelStyleProps) => {
+}: LabelStyleProps): any => {
   return {
     cursor: disabled ? 'default' : 'pointer',
     color: disabled

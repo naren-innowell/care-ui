@@ -25,7 +25,7 @@ type PropsType = {
   value: string,
 }
 
-const TextArea = (props: PropsType) => {
+const TextArea = (props: PropsType): React$Node => {
   const {
     id,
     name,

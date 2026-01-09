@@ -6,7 +6,7 @@ type PropsType = {
   theme: ThemeType,
 }
 
-export const textAreaStyle = (props: PropsType) => {
+export const textAreaStyle = (props: PropsType): any => {
   const { theme } = props
 
   return {
@@ -21,7 +21,7 @@ export const textAreaStyle = (props: PropsType) => {
   }
 }
 
-export const wrapperStyle = () => {
+export const wrapperStyle = (): any => {
   return {
     width: '100%',
     display: 'flex',
@@ -29,12 +29,12 @@ export const wrapperStyle = () => {
   }
 }
 
-export const labelStyle = ({ theme }: { theme: ThemeType }) => ({
+export const labelStyle = ({ theme }: { theme: ThemeType }): any => ({
   color: theme.care.palette.text.positive,
   ...theme.care.typography.desktop.bodyMd,
 })
 
-export const errorTextStyle = ({ theme }: { theme: ThemeType }) => ({
+export const errorTextStyle = ({ theme }: { theme: ThemeType }): any => ({
   padding: `0 ${theme.care.spacing.xs}`,
   color: theme.care.palette.text.danger,
   ...theme.care.typography.desktop.bodySm,

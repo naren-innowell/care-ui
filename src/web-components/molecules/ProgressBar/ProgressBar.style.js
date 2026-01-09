@@ -17,7 +17,7 @@ const getSize = (props: SizeStyleProps) => {
   return theme.care.spacing.sm
 }
 
-export const wrapperStyle = (props: SizeStyleProps) => {
+export const wrapperStyle = (props: SizeStyleProps): any => {
   const { theme } = props
 
   const progressValueStyle = {
@@ -49,7 +49,7 @@ export const wrapperStyle = (props: SizeStyleProps) => {
   }
 }
 
-export const wrapperStyleSkip = (props: SizeStyleProps) => {
+export const wrapperStyleSkip = (props: SizeStyleProps): any => {
   const { theme } = props
 
   return {

@@ -1,13 +1,13 @@
 // @flow
 
-import React, { type Node } from 'react'
+import React from 'react'
 import { useFela } from 'react-fela'
 
 import { textStyle } from './TextNew.style'
 
 type TextProps = {
   as?: string,
-  children: string | Node,
+  children: string | React$Node,
   color?: 'positive' | 'title' | 'default' | 'caption' | 'danger' | 'disabled',
   dataTestId?: string,
   marginLeft?: string,
@@ -34,7 +34,7 @@ type TextProps = {
   whiteSpace?: 'nowrap' | 'wrap',
 }
 
-const TextNew = (props: TextProps) => {
+const TextNew = (props: TextProps): React$Node => {
   const { children, as: Component = 'p', dataTestId } = props
 
   const { css } = useFela({ ...props })

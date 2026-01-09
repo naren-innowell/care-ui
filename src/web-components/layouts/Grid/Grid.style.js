@@ -11,7 +11,9 @@ type PropsType = {
   theme: ThemeType,
 }
 
-export const gridStyle = ({ theme, extend }: PropsType) => ({
+export const gridStyle = ({ theme, extend }: PropsType): { [key: string]: any } => {
+  return {
+    ...(extend && extend({ theme })),
   display: 'grid',
   gridTemplateColumns: 'repeat(12, 1fr)',
   width: '100%',
@@ -24,6 +26,6 @@ export const gridStyle = ({ theme, extend }: PropsType) => ({
   [theme.care.breakpoints.queries.lg]: {
     gap: theme.care.spacing.lg,
     gridRowGap: theme.care.spacing.xl,
-  },
-  ...(extend && extend({ theme })),
-})
+    },
+  }
+}

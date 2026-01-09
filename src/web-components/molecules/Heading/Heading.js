@@ -1,9 +1,11 @@
 // @flow
 
-import React, { type ComponentType, type Node } from 'react'
+import React, { type ComponentType } from 'react'
 import { useFela } from 'react-fela'
 
-const styleRules = ({ headingLevel, theme, color, margin, center }) => ({
+import type { ThemeType } from "../../atoms";
+
+const styleRules = ({ headingLevel, theme, color, margin, center }: { headingLevel: string, theme: ThemeType, color?: 'positive' | 'title', margin?: 'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl', center?: boolean }): { [key: string]: any } => ({
   color: theme.care.palette.text[color],
   textAlign: center ? 'center' : 'left',
   marginTop: margin ? theme.care.spacing[margin] : 0,
@@ -14,7 +16,7 @@ const styleRules = ({ headingLevel, theme, color, margin, center }) => ({
 export type HeadingProps = {
   as?: string | ComponentType<any>,
   center?: boolean,
-  children: ?Node,
+  children: ?React$Node,
   className?: string,
   color?: 'positive' | 'title',
   dataTestId?: string,
@@ -32,7 +34,7 @@ const Heading = ({
   center,
   dataTestId,
   margin,
-}: HeadingProps) => {
+}: HeadingProps): React$Node => {
   const headingLevel = `h${level}`
   const { css } = useFela({ headingLevel, color, margin, center })
 

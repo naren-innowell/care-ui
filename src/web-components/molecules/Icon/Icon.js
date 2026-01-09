@@ -3,6 +3,8 @@
 import React from 'react'
 import { useFela } from 'react-fela'
 
+import { type ThemeType } from 'web-components/atoms'
+
 type PropsType = {
   as: string,
   color?: string,
@@ -11,7 +13,7 @@ type PropsType = {
   scale?: number,
 }
 
-const iconStyle = ({ theme, color = 'currentColor', onClick, scale = 1 }) => {
+const iconStyle = ({ theme, color = 'currentColor', onClick, scale = 1 }: { theme: ThemeType, color?: string, onClick?: () => void, scale?: number }): { [key: string]: any } => {
   const { care } = theme
 
   const size = `calc(${care.spacing.lg} * ${scale})`
@@ -37,7 +39,11 @@ const iconStyle = ({ theme, color = 'currentColor', onClick, scale = 1 }) => {
   }
 }
 
-const Icon = ({ as: Component, ...props }: PropsType) => {
+const Icon = ({ as: Component, ...props }: PropsType): React$Node => {
+  if (!Component) {
+    throw new Error('Component is required')
+  }
+
   const { css } = useFela(props)
   const { onClick, dataTestId } = props
 

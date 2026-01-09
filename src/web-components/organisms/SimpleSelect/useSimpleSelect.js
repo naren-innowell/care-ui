@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react'
 
 type OptionType = {
-  icon?: Node | string,
+  icon?: React$Node | string,
   label: string,
   value: string,
 }
@@ -20,7 +20,7 @@ const useSimpleSelect = ({
   defaultOption,
   reset,
   onChange,
-}: UseSimpleSelectProps) => {
+}: UseSimpleSelectProps): any => {
   const defaultOpt = defaultOption || options[0]
 
   const [selectedOption, setSelectedOption] = useState(defaultOpt)
@@ -28,7 +28,7 @@ const useSimpleSelect = ({
   const [focusedIndex, setFocusedIndex] = useState<number>(0)
   const [typeAhead, setTypeAhead] = useState('')
 
-  const typeAheadTimeout = useRef<?TimeoutID>(null)
+  const typeAheadTimeout = useRef<?any>(null)
   const optionRefs = useRef<any>(options.map(() => ({ current: null })))
 
   const filteredOptions: Array<OptionType> = options
@@ -37,8 +37,9 @@ const useSimpleSelect = ({
 
   // Reset on prop change
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (reset) setSelectedOption(defaultOpt)
-  }, [reset])
+  }, [reset, defaultOpt])
 
   // Scroll into view when focused changes
   useEffect(() => {

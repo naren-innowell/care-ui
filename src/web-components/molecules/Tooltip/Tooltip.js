@@ -1,6 +1,6 @@
 // @flow
 
-import React, { type Node, useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { useFela } from 'react-fela'
 
 import { Text } from 'web-components'
@@ -8,7 +8,7 @@ import { Text } from 'web-components'
 import { sizeStyle, textStyle, tooltipContainerStyle } from './Tooltip.style'
 
 type PropsType = {
-  children: Node,
+  children: React$Node,
   dataTestId?: string,
   note?: string,
   position?: 'top' | 'bottom' | 'left' | 'right' | 'bottom-left',
@@ -27,7 +27,7 @@ const Tooltip = ({
   width,
   note,
   size,
-}: PropsType) => {
+}: PropsType): React$Node => {
   const [leftPosition, setLeft] = useState('0')
   const [topPosition, setTop] = useState('0')
 
@@ -41,8 +41,8 @@ const Tooltip = ({
   })
   const containerRef = useRef(null)
 
-  const onMouseEnter = () => {
-    if (!containerRef.current) return null
+  const onMouseEnter = (): void => {
+    if (!containerRef.current) return;
 
     const {
       top,
@@ -82,7 +82,7 @@ const Tooltip = ({
     setTop(`${tooltipTop}px`)
     setLeft(`${tooltipLeft}px`)
 
-    return null
+    return;
   }
 
   return (

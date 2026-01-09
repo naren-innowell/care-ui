@@ -7,7 +7,7 @@ type SizeStyleProps = {
   theme: ThemeType,
 }
 
-export const sizeStyle = (props: SizeStyleProps) => {
+export const sizeStyle = (props: SizeStyleProps): any => {
   const { size = 'md', theme } = props
 
   // large size
@@ -31,7 +31,7 @@ type PropsType = {
   theme: ThemeType,
 }
 
-export const tabStyle = (props: PropsType) => {
+export const tabStyle = (props: PropsType): any => {
   const { isActive, disabled, theme } = props
 
   return {

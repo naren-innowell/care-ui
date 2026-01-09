@@ -1,4 +1,3 @@
-/* eslint-disable import/no-unused-modules */
 // @flow
 
 import AddPerson from 'web-components/atoms/icons/add-person.svg'

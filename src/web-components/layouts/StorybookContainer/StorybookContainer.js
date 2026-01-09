@@ -1,15 +1,15 @@
 // @flow
 
-import React, { type Node } from 'react'
+import React from 'react'
 
 import { Box, FlexContainer, Text } from 'web-components'
 
 type StorybookContainerProps = {
-  children: Node,
+  children: React$Node,
   componentDescription: string,
   componentName: string,
 }
-const StorybookContainer = (props: StorybookContainerProps) => {
+const StorybookContainer = (props: StorybookContainerProps): React$Node => {
   const { componentName, componentDescription, children } = props
 
   return (

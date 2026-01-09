@@ -1,6 +1,6 @@
 // @flow
 
-import React, { type Node } from 'react'
+import React from 'react'
 import { useFela } from 'react-fela'
 import Link from 'found/Link'
 
@@ -34,7 +34,7 @@ export type ToPropType = {|
 type PropsType = {
   active?: boolean | string,
   ariaLabel?: string,
-  children?: string | Node,
+  children?: string | React$Node,
   compactPadding?: boolean,
   dataTestId?: string,
   disabled?: boolean,
@@ -57,7 +57,7 @@ type PropsType = {
   variant?: 'primary' | 'secondary' | 'text' | 'pill' | 'danger' | 'link',
 }
 
-const Button = (props: PropsType) => {
+const Button = (props: PropsType): React$Node => {
   const {
     children: buttonText,
     type = 'button',
@@ -90,7 +90,7 @@ const Button = (props: PropsType) => {
   const ButtonElement = href || to ? LinkElement : 'button'
 
   // Button as Link
-  const linkElementProps = {}
+  const linkElementProps: { [key: string]: any } = {}
   if (to) {
     linkElementProps.to = to
   }
@@ -102,7 +102,7 @@ const Button = (props: PropsType) => {
     linkElementProps.rel = 'noopener noreferrer'
   }
 
-  const handleOnClick = (e) => {
+  const handleOnClick = (e: SyntheticEvent<any>) => {
     if (!onClick) {
       return
     }

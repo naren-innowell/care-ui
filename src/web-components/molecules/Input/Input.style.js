@@ -7,7 +7,7 @@ type SizeStyleProps = {
   theme: ThemeType,
 }
 
-export const sizeStyle = (props: SizeStyleProps) => {
+export const sizeStyle = (props: SizeStyleProps): any => {
   const { size, theme } = props
 
   // large size
@@ -27,7 +27,7 @@ type WrapperStyleProps = {
   halfWidth?: boolean,
 }
 
-export const wrapperStyle = (props: WrapperStyleProps) => {
+export const wrapperStyle = (props: WrapperStyleProps): any => {
   const { halfWidth = false } = props
 
   return {
@@ -45,7 +45,7 @@ type InputStyleProps = {
   theme: ThemeType,
 }
 
-export const inputStyle = (props: InputStyleProps) => {
+export const inputStyle = (props: InputStyleProps): any => {
   const { theme, error } = props
 
   return {
@@ -77,12 +77,12 @@ export const inputStyle = (props: InputStyleProps) => {
   }
 }
 
-export const labelStyle = ({ theme }: { theme: ThemeType }) => ({
+export const labelStyle = ({ theme }: { theme: ThemeType }): any => ({
   color: theme.care.palette.text.positive,
   ...theme.care.typography.desktop.bodyMd,
 })
 
-export const errorTextStyle = ({ theme }: { theme: ThemeType }) => ({
+export const errorTextStyle = ({ theme }: { theme: ThemeType }): any => ({
   padding: `0 ${theme.care.spacing.xs}`,
   color: theme.care.palette.text.danger,
   ...theme.care.typography.desktop.bodySm,

@@ -9,7 +9,7 @@ type AvatarStyle = {
   theme: ThemeType,
 }
 
-export const avatarStyle = (props: AvatarStyle) => {
+export const avatarStyle = (props: AvatarStyle): { [key: string]: any } => {
   const { color, requireSupport, theme } = props
 
   const border = requireSupport
@@ -34,7 +34,7 @@ export const avatarStyle = (props: AvatarStyle) => {
   }
 }
 
-export const avatarGroupStyle = () => ({
+export const avatarGroupStyle = (): { [key: string]: any } => ({
   display: 'flex',
   '& :not(:first-child)': {
     marginLeft: '-7.5px',

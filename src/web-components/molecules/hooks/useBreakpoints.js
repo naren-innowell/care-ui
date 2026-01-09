@@ -10,7 +10,7 @@ import {
   BREAKPOINT_XS,
 } from 'web-components/atoms/tokens/breakpoints'
 
-const getBreakpoints = ({ width, height }) => {
+const getBreakpoints = ({ width, height }: { width: number, height: number }): any => {
   const xs = width < BREAKPOINT_XS
   const sm = width >= BREAKPOINT_SM
   const md = width >= BREAKPOINT_MD
@@ -27,7 +27,7 @@ const getBreakpoints = ({ width, height }) => {
     xl,
   }
 }
-const useBreakpoints = () => {
+const useBreakpoints = (): any => {
   const { width, height } = useWindowSize()
   const breakpoints = getBreakpoints({ width, height })
 

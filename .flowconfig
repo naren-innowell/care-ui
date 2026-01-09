@@ -2,20 +2,45 @@
 .*/node_modules/.*
 .*/dist/.*
 .*/\.git/.*
+.*/\.storybook/.*
+.*/storybook-static/.*
+.*\.stories\.js$
+.*/public/.*
+.*/vite\.config\.js$
+.*/babel\.config\.js$
+.*/eslint\.config\.js$
+.*/node_modules/config-chain/test/broken.json
+.*/**/malformed_package_json/package.json
+.*/node_modules/graphql/.*
+<PROJECT_ROOT>/vendor/.*
+<PROJECT_ROOT>/public/assets/.*
 
 [include]
 
+[declarations]
+.*/node_modules/relay-runtime/.*
+.*/node_modules/react-relay/.*
+
 [libs]
+flow-typed/
+flow-stubs/
 
 [lints]
 
 [options]
-all=true
+all=false
 exact_by_default=true
 munge_underscores=true
 suppress_type=$FlowFixMe
 suppress_type=$FlowIssue
 suppress_type=$FlowExpectedError
+module.system.node.resolve_dirname=node_modules
+module.name_mapper='.*\(.s?css\)' -> '<PROJECT_ROOT>/flow-stubs/css_module.js'
+module.name_mapper='.*\(.md\)' -> '<PROJECT_ROOT>/flow-stubs/css_module.js'
+module.name_mapper='^web-components/\(.*\)$' -> '<PROJECT_ROOT>/src/web-components/\1'
+module.name_mapper='^web-components$' -> '<PROJECT_ROOT>/src/web-components'
+module.name_mapper='^lodash/\(.*\)$' -> '<PROJECT_ROOT>/node_modules/lodash/\1'
+sharedmemory.hash_table_pow=21
 
 [version]
 ^0.231.0

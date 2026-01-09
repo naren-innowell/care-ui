@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 
-const useModal = () => {
+const useModal = (): any => {
   // prettier-ignore
   const [isOpen, setIsOpen] = useState<boolean>(false)
 

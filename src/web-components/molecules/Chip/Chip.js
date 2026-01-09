@@ -15,7 +15,7 @@ type PropsType = {
   variant?: 'primary' | 'secondary',
 }
 
-const Chip = (props: PropsType) => {
+const Chip = (props: PropsType): React$Node => {
   const { label, onClick, size = 'md' } = props
   const { css } = useFela({ ...props })
 

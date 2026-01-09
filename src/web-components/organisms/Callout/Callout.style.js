@@ -7,7 +7,7 @@ type SizeStyleProps = {
   theme: ThemeType,
 }
 
-export const sizeStyle = (props: SizeStyleProps) => {
+export const sizeStyle = (props: SizeStyleProps): any => {
   const { size = 'md', theme } = props
 
   // large size
@@ -28,7 +28,7 @@ type VariantStyleProps = {
   variant?: 'danger' | 'warning',
 }
 
-export const variantStyle = (props: VariantStyleProps) => {
+export const variantStyle = (props: VariantStyleProps): any => {
   const { variant = 'danger', theme } = props
 
   if (variant === 'danger') {
@@ -49,7 +49,7 @@ type StylePropsType = {
   theme: ThemeType,
 }
 
-export const calloutContainer = (styleProps: StylePropsType) => {
+export const calloutContainer = (styleProps: StylePropsType): any => {
   const { theme } = styleProps
 
   return {

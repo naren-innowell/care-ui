@@ -1,6 +1,6 @@
 // @flow
 
-import React, { type Node } from 'react'
+import React from 'react'
 import { useFela } from 'react-fela'
 
 import { flexContainer } from './FlexContainer.style'
@@ -8,7 +8,7 @@ import { flexContainer } from './FlexContainer.style'
 type PropTypes = {
   alignItems?: string,
   boxStyle?: { [string]: string },
-  children?: Node,
+  children?: React$Node,
   dataTestId?: string,
   direction?: 'row' | 'column' | 'row-reverse' | 'column-reverse',
   gap?: string,
@@ -22,7 +22,7 @@ type PropTypes = {
   wrap?: 'wrap' | 'nowrap',
 }
 
-const FlexContainer = (props: PropTypes) => {
+const FlexContainer = (props: PropTypes): React$Node => {
   const { children, dataTestId, id } = props
 
   const { css } = useFela({ ...props })

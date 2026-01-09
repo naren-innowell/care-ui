@@ -1,12 +1,12 @@
 // @flow
 
-import React, { type Node } from 'react'
+import React from 'react'
 import { useFela } from 'react-fela'
 
 import { gridStyle } from './Grid.style'
 
 type PropsType = {
-  children: ?Array<?Node>,
+  children: ?Array<?React$Node>,
   extend?: (
     props: any,
   ) => {
@@ -14,7 +14,7 @@ type PropsType = {
   },
 }
 
-const Grid = ({ children, extend }: PropsType) => {
+const Grid = ({ children, extend }: PropsType): React$Node => {
   const { css } = useFela({ extend })
 
   return <div className={css(gridStyle)}>{children}</div>

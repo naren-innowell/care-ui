@@ -7,7 +7,7 @@ type SizeStyleProps = {
   theme: ThemeType,
 }
 
-export const sizeStyle = (props: SizeStyleProps) => {
+export const sizeStyle = (props: SizeStyleProps): { [key: string]: any } => {
   const { size, theme } = props
 
   // large size
@@ -32,7 +32,7 @@ type VariantStyleProps = {
   variant?: 'primary' | 'secondary',
 }
 
-export const variantStyle = (props: VariantStyleProps) => {
+export const variantStyle = (props: VariantStyleProps): { [key: string]: any } => {
   const { variant, theme } = props
 
   const disabledStyle = {
@@ -75,7 +75,7 @@ export const variantStyle = (props: VariantStyleProps) => {
   }
 }
 
-export const chipContainer = ({ theme }: { theme: ThemeType }) => {
+export const chipContainer = ({ theme }: { theme: ThemeType }): { [key: string]: any } => {
   return {
     display: 'flex',
     justifyContent: 'center',

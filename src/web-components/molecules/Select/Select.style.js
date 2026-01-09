@@ -7,11 +7,11 @@ type PropsType = {
   theme: ThemeType,
 }
 
-export const containerStyle = () => ({
+export const containerStyle = (): any => ({
   position: 'relative',
 })
 
-export const selectStyle = ({ theme, size = "md" }: PropsType) => ({
+export const selectStyle = ({ theme, size = "md" }: PropsType): any => ({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
@@ -47,7 +47,7 @@ export const selectStyle = ({ theme, size = "md" }: PropsType) => ({
   '-webkit-appearance': 'none',
 })
 
-export const arrowStyle = ({ theme, size }: PropsType) => ({
+export const arrowStyle = ({ theme, size }: PropsType): any => ({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',

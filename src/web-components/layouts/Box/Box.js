@@ -1,6 +1,6 @@
 // @flow
 
-import React, { type Node } from 'react'
+import React from 'react'
 import { useFela } from 'react-fela'
 
 import type { SpacingOptions } from 'web-components/atoms/themeHelpers'
@@ -17,7 +17,7 @@ type PropTypes = {
   borderRadius?: string,
   borderTop?: string,
   boxShadow?: 1 | 2 | 3 | 4 | 5,
-  children?: Node,
+  children?: React$Node,
   dataTestId?: string,
   direction?: 'row' | 'column' | 'row-reverse' | 'column-reverse',
   display?: string,
@@ -45,7 +45,7 @@ type PropTypes = {
   zIndex?: number,
 }
 
-const Box = (props: PropTypes) => {
+const Box = (props: PropTypes): React$Node => {
   const { children, dataTestId, onClick, id } = props
   const { css } = useFela({ ...props })
 

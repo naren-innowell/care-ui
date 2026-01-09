@@ -7,7 +7,7 @@ type SizeStyleProps = {
   theme: ThemeType,
 }
 
-export const sizeStyle = (props: SizeStyleProps) => {
+export const sizeStyle = (props: SizeStyleProps): any => {
   const { size = 'md', theme } = props
 
   // large size
@@ -29,7 +29,7 @@ type SearchBarStyleProps = {
   theme: ThemeType,
 }
 
-export const searchBarStyle = (props: SearchBarStyleProps) => {
+export const searchBarStyle = (props: SearchBarStyleProps): any => {
   const { fullWidth, isDisabled = false, theme } = props
 
   const backgroundColor = isDisabled
@@ -58,7 +58,7 @@ export const searchBarStyle = (props: SearchBarStyleProps) => {
   }
 }
 
-export const inputStyle = ({ theme }: ThemeType) => ({
+export const inputStyle = ({ theme }: ThemeType): any => ({
   flex: '1',
   border: 'none',
   outline: 'none',

@@ -7,7 +7,7 @@ type SizeStyleProps = {
   theme: ThemeType,
 }
 
-export const sizeStyle = (props: SizeStyleProps) => {
+export const sizeStyle = (props: SizeStyleProps): any => {
   const { size, theme } = props
 
   // large size
@@ -23,7 +23,7 @@ export const sizeStyle = (props: SizeStyleProps) => {
   }
 }
 
-const getWidthStyle = (variant, width) => {
+const getWidthStyle = (variant?: string, width?: string): any => {
   if (variant === 'info') {
     return { width: width || '300px' }
   }
@@ -40,7 +40,7 @@ type PropsType = {
   width?: string,
 }
 
-export const tooltipContainerStyle = () => ({
+export const tooltipContainerStyle = (): any => ({
   display: 'flex',
   ':hover span': {
     visibility: 'visible',
@@ -55,7 +55,7 @@ export const textStyle = ({
   variant,
   width,
   position,
-}: PropsType) => {
+}: PropsType): any => {
   const widthStyle = getWidthStyle(variant, width)
 
   let transform = 'translateX(-50%)'

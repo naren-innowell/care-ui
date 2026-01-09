@@ -2,7 +2,7 @@
 
 type ThemeType = { [string]: any }
 
-export const dropdown = ({ fullWidth }: { fullWidth: true }) => {
+export const dropdown = ({ fullWidth }: { fullWidth: true }): { [key: string]: any } => {
   const widthStyle = fullWidth ? { width: '100%' } : {}
 
   return {
@@ -20,7 +20,7 @@ export const dropdownContent = ({
   minWidth?: string,
   position: string,
   theme: ThemeType,
-}) => {
+}): { [key: string]: any } => {
   const defaultStyle = {
     display: 'block',
     position: 'absolute',
@@ -34,7 +34,7 @@ export const dropdownContent = ({
   }
 
   // POSITION VARIANCE -> START(default) | END | LEFT | RIGHT | REVERSE
-  const positionStyle = {}
+  const positionStyle: { [key: string]: any } = {}
 
   // START
   if (position === 'start') {
@@ -61,7 +61,7 @@ export const dropdownContent = ({
   }
 
   return {
-    ...defaultStyle,
-    ...positionStyle,
+    ...(defaultStyle: { [key: string]: any }),
+    ...(positionStyle: { [key: string]: any }),
   }
 }

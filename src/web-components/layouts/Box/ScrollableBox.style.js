@@ -11,7 +11,7 @@ type ScrollableBoxContainerProps = {
   theme: ThemeType,
 }
 
-export const scrollableBoxContainer = (props: ScrollableBoxContainerProps) => {
+export const scrollableBoxContainer = (props: ScrollableBoxContainerProps): { [key: string]: any } => {
   const {
     theme,
     maxHeight,

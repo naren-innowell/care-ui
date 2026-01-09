@@ -8,7 +8,7 @@ type FlexItemStyleProps = {
   theme: ThemeType,
 }
 
-export const flexItem = (props: FlexItemStyleProps) => {
+export const flexItem = (props: FlexItemStyleProps): { [key: string]: any } => {
   const { flex, alignSelf } = props
 
   return {

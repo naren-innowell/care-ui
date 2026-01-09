@@ -3,8 +3,8 @@
 import theme from 'web-components/atoms'
 
 // Define the type for the keys of the spacing object
-type SpacingKeys = $Keys<typeof theme.spacing>
-type ElevationKeys = $Keys<typeof theme.elevation>
+type SpacingKeys = any
+type ElevationKeys = any
 
 export const getSpacingOptions = (): Array<SpacingKeys> => {
   return Object.keys(theme.spacing)

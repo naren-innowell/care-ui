@@ -25,7 +25,7 @@ type PropTypes = {
   to?: string | ToPropType,
 }
 
-const DropDownMenuItem = forwardRef<PropTypes, any>((props: PropTypes, ref) => {
+const DropDownMenuItem: any = forwardRef<PropTypes, any>((props: PropTypes, ref): React$Node => {
   const {
     children,
     onClick,

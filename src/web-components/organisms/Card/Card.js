@@ -1,17 +1,19 @@
 // @flow
 
-import React, { type Node } from 'react'
+import type { ThemeType } from "../../atoms";
+
+import React from 'react'
 import { useFela } from 'react-fela'
 
 type PropsType = {
-  children?: Node,
+  children?: React$Node,
   dataTestId?: string,
-  footer?: Node,
+  footer?: React$Node,
   headerColor?: string,
   selected?: boolean,
 }
 
-const cardStyle = ({ theme, selected }) => {
+const cardStyle = ({ theme, selected }: { theme: ThemeType, selected?: boolean }): any => {
   const { care } = theme
 
   const backgroundColor = selected ? '#EFF9FC' : care.palette.surface.default
@@ -35,7 +37,7 @@ const cardStyle = ({ theme, selected }) => {
   }
 }
 
-const headerStyle = ({ theme, headerColor }) => {
+const headerStyle = ({ theme, headerColor }: { theme: ThemeType, headerColor?: string }): any => {
   const { care } = theme
   const backgroundColor = headerColor || care.palette.surface.disabled
 
@@ -46,7 +48,7 @@ const headerStyle = ({ theme, headerColor }) => {
   }
 }
 
-const contentStyle = ({ theme }) => {
+const contentStyle = ({ theme }: { theme: ThemeType }): any => {
   const { care } = theme
 
   return {
@@ -59,7 +61,7 @@ const contentStyle = ({ theme }) => {
   }
 }
 
-const Card = (props: PropsType) => {
+const Card = (props: PropsType): React$Node => {
   const { children, dataTestId, headerColor, footer, selected } = props
   const { css } = useFela({ headerColor, selected })
 

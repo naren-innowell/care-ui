@@ -25,7 +25,7 @@ type PropsType = {
   wrapLabel?: boolean,
 }
 
-const RadioButton = (props: PropsType) => {
+const RadioButton = (props: PropsType): React$Node => {
   const { inputAttributes, ariaLabel, size = 'md', wrapLabel = false } = props
   const {
     id,
