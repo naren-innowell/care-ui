@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import flow from 'vite-plugin-flow'
+import { vitePluginFlow } from 'vite-plugin-flow'
 import { resolve, dirname } from 'path'
 import { fileURLToPath } from 'url'
 
@@ -8,7 +8,13 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [flow(), react()],
+  plugins: [
+    vitePluginFlow({ filter: /\.(js|jsx)$/ }),
+    react({
+      jsxRuntime: 'automatic',
+      jsxImportSource: 'react',
+    }),
+  ],
   resolve: {
     alias: {
       'web-components': resolve(__dirname, 'src/web-components'),
@@ -22,7 +28,7 @@ export default defineConfig({
       fileName: (format) => `care-ui.${format === 'es' ? 'mjs' : 'cjs'}`,
     },
     rollupOptions: {
-      external: ['react', 'react-dom', 'react/jsx-runtime'],
+      external: ['react', 'react-dom', 'react/jsx-runtime', 'i18next', 'react-i18next'],
       output: {
         globals: {
           react: 'React',
@@ -31,5 +37,13 @@ export default defineConfig({
         },
       },
     },
+    commonjsOptions: {
+      transformMixedEsModules: true,
+    },
+  },
+  esbuild: {
+    loader: 'jsx',
+    include: /src\/.*\.jsx?$/,
+    exclude: [],
   },
 })
