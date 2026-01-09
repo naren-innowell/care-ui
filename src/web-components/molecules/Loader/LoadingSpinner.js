@@ -2,7 +2,6 @@
 
 import React from 'react'
 import { useFela } from 'react-fela'
-import { useTranslation } from 'react-i18next'
 
 import Grid from '../../../assets/grid.svg'
 import { type ThemeType } from 'web-components/atoms'
@@ -44,14 +43,13 @@ const loaderSubMessageStyle = ({ theme }: { theme: ThemeType }): any => ({
 const LoadingSpinner = ({ message }: PropTypes): React$Node => {
   const { css } = useFela()
 
-  // LOcalization
-  const { t: translation } = useTranslation()
+  const loadingText = 'Loading Innowell'
 
   return (
     <div data-component-id="PageLoading" className={css(loaderWrapperStyle)}>
       <Grid className={css(spinnerStyle)} />
       <div className={css(loaderTitleStyle)}>
-        {translation('loading_innowell')}
+        {loadingText}
       </div>
       {message && <p className={css(loaderSubMessageStyle)}>{message}</p>}
     </div>

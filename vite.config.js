@@ -30,7 +30,7 @@ export default defineConfig({
     minify: 'esbuild',
     sourcemap: false,
     rollupOptions: {
-      external: ['react', 'react-dom', 'react/jsx-runtime', 'i18next', 'react-i18next'],
+      external: ['react', 'react-dom', 'react/jsx-runtime'],
       output: {
         globals: {
           react: 'React',

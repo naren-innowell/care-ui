@@ -2,7 +2,6 @@
 
 import React from 'react'
 import { useFela } from 'react-fela'
-import { useTranslation } from 'react-i18next'
 
 import { Button, Container, Heading } from 'web-components'
 import ChevronLeft from 'web-components/atoms/icons/chevron-left.svg'
@@ -24,7 +23,7 @@ const PageHeader = (props: PropsType): React$Node => {
   const { children, linkTo, action } = props
   const { css } = useFela()
 
-  const { t: translation } = useTranslation()
+  const backToDashboardText = 'Back to Dashboard'
 
   return (
     <header className={css(headerStyle)}>
@@ -35,11 +34,11 @@ const PageHeader = (props: PropsType): React$Node => {
             <Button
               to={linkTo}
               variant="text"
-              ariaLabel={translation('back_to_dashboard')}
+              ariaLabel={backToDashboardText}
               dataTestId="back-to-dashboard"
               leftIcon={ChevronLeft}
             >
-              {translation('back_to_dashboard')}
+              {backToDashboardText}
             </Button>
           </div>
 
