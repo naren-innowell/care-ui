@@ -32,38 +32,62 @@ This library requires the following peer dependencies:
 - `react-dom`: ^18.0.0 || ^19.0.0
 - `react-fela`: ~10.8.0
 
-Make sure to install these in your project:
+**Important**: You must install these in your consuming project:
 
 ```bash
 yarn add react react-dom react-fela@~10.8.0
 ```
 
+**Note**: `react-fela` is a peer dependency and must be provided by your application. The library does not bundle it, so make sure it's installed and the `RendererProvider` is set up correctly (see Setup section below).
+
+**⚠️ CRITICAL**: You MUST wrap your application with `RendererProvider` from `react-fela`. See [SETUP_GUIDE.md](./SETUP_GUIDE.md) for detailed setup instructions.
+
+**Troubleshooting**: If you encounter errors, see [TROUBLESHOOTING.md](./TROUBLESHOOTING.md) for solutions.
+
 ## Usage
 
-### Setup Fela Renderer
+### Setup
 
-Before using components, you need to set up a Fela renderer and provider:
+**If you already have a FelaProvider in your app** (like the example you showed):
+- ✅ No setup needed! Just import and use components
+- Components will work with your existing `FelaProvider`
+
+**If you don't have a FelaProvider**:
+- Wrap your app with `CareUIProvider` (included in the library):
 
 ```javascript
-import { createRenderer } from 'fela';
-import { RendererProvider } from 'react-fela';
-import embedded from 'fela-plugin-embedded';
-import prefixer from 'fela-plugin-prefixer';
-import fallbackValue from 'fela-plugin-fallback-value';
+import { CareUIProvider, Box, Button, Heading } from '@naren-innowell/care-ui';
 
-const renderer = createRenderer({
-  plugins: [
-    embedded(),
-    prefixer(),
-    fallbackValue(),
-  ],
+function App() {
+  return (
+    <CareUIProvider>
+      {/* All your components */}
+      <Box padding="md">
+        <Heading level={1}>Welcome</Heading>
+        <Button variant="primary">Click Me</Button>
+      </Box>
+    </CareUIProvider>
+  );
+}
+```
+
+**Optional: Custom Renderer**
+If you want to use a custom Fela renderer with `CareUIProvider`:
+
+```javascript
+import { CareUIProvider } from '@naren-innowell/care-ui';
+import { createRenderer } from 'fela';
+// ... your custom plugins
+
+const customRenderer = createRenderer({
+  plugins: [/* your plugins */],
 });
 
 function App() {
   return (
-    <RendererProvider renderer={renderer}>
-      {/* Your app components */}
-    </RendererProvider>
+    <CareUIProvider renderer={customRenderer}>
+      <YourComponents />
+    </CareUIProvider>
   );
 }
 ```

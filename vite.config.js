@@ -30,7 +30,18 @@ export default defineConfig({
     minify: 'esbuild',
     sourcemap: false,
     rollupOptions: {
-      external: ['react', 'react-dom', 'react/jsx-runtime'],
+      external: (id) => {
+        // Externalize React and related packages (but NOT react-fela - we bundle it)
+        if (id === 'react' || id === 'react-dom' || id === 'react/jsx-runtime') {
+          return true;
+        }
+        // Externalize any React subpath imports
+        if (id.startsWith('react/') || id.startsWith('react-dom/')) {
+          return true;
+        }
+        // Bundle react-fela, fela, and fela plugins
+        return false;
+      },
       output: {
         globals: {
           react: 'React',

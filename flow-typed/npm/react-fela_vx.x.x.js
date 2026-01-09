@@ -14,7 +14,26 @@
  */
 
 declare module 'react-fela' {
-  declare module.exports: any;
+  // ES6 named exports
+  declare export var RendererProvider: React$ComponentType<{
+    renderer: any,
+    children?: React$Node,
+  }>;
+  
+  declare export var useFela: (props?: any) => {
+    css: (...styles: Array<any>) => string,
+    theme: any,
+    renderer: any,
+  };
+  
+  // Additional exports
+  declare export var Provider: any;
+  declare export var ThemeProvider: any;
+  declare export var FelaComponent: any;
+  declare export var FelaTheme: any;
+  declare export var connect: any;
+  declare export var createComponent: any;
+  declare export var withTheme: any;
 }
 
 /**
