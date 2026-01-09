@@ -19,6 +19,8 @@ jobs:
           scope: '@naren-innowell'
       - name: Install dependencies
         run: yarn install --frozen-lockfile
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Flow type check
         run: yarn flow
       - name: Build
